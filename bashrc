@@ -10,6 +10,7 @@ export MANPATH=${HOME}/opt/share/man:$MANPATH
 export PYTHONPATH=${HOME}/opt/lib/python2.6/site-packages/:$PYTHONPATH
 export LANG=en_US
 export SVN_EDITOR=vim
+unset SSH_ASKPASS
 
 # vim
 alias vim_reset='rm -rf ~/.vim; git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim; vim +PluginInstall +qall'
