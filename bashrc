@@ -4,14 +4,15 @@
 
 export PS1='[\u@\h \W]\A\$ '
 
+# local apps and libraries (~/opt)
 export PATH=${HOME}/opt/bin:$PATH
 export MANPATH=${HOME}/opt/share/man:$MANPATH
-export SVN_EDITOR=vim
 export PYTHONPATH=${HOME}/opt/lib/python2.6/site-packages/:$PYTHONPATH
 export LANG=en_US
-export LESSOPEN="| src-hilite-lesspipe.sh %s"
-export LESS=' -R '
+export SVN_EDITOR=vim
+unset SSH_ASKPASS
 
+# vim
 alias vim_reset='rm -rf ~/.vim; git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim; vim +PluginInstall +qall'
 
 #system aliases
