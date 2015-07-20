@@ -68,3 +68,4 @@ set number
 " filetype indents
 autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4
 autocmd FileType cpp setlocal expandtab tabstop=3 shiftwidth=3
+autocmd FileType sh setlocal autoindent tabstop=2 shiftwidth=2 expandtab softtabstop=2
