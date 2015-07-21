@@ -10,7 +10,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Vundle Bundle/Plugin lines
 Plugin 'altercation/vim-colors-solarized' " http://ethanschoonover.com/solarized color scheme
-Plugin 'scrooloose/nerdtree.git' " NERDTree filemanager
+"Plugin 'scrooloose/nerdtree.git' " NERDTree filemanager
 Plugin 'jeetsukumaran/vim-buffergator' 
 "Plugin 'nicoraffo/conque' " Shell terminal
 
@@ -40,18 +40,17 @@ set background=dark
 colorscheme solarized
 
 " map nerdtree
-map <C-n> :NERDTreeToggle<CR>
-map <Leader>n <plug>NERDTreeTabsToggle<CR>
+"map <C-n> :NERDTreeToggle<CR>
 
 " buffer switching
 " Mappings to access buffers (don't use "\p" because a
 " delay before pressing "p" would accidentally paste).
 " \l       : list buffers
 " \b \f \g : go back/forward/last-used
-nnoremap <Leader>l :ls<CR>
-nnoremap <Leader>b :bp<CR>
-nnoremap <Leader>f :bn<CR>
-nnoremap <Leader>g :e#<CR>
+"nnoremap <Leader>l :ls<CR>
+"nnoremap <Leader>b :bp<CR>
+"nnoremap <Leader>f :bn<CR>
+"nnoremap <Leader>g :e#<CR>
 " It's useful to show the buffer number in the status line.
 set laststatus=2 statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
