@@ -14,6 +14,7 @@ unset SSH_ASKPASS
 
 # vim
 alias vim_reset='rm -rf ~/.vim; git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim; vim +PluginInstall +qall'
+alias vim_update='vim +PluginUpdate +qall'
 
 #system aliases
 alias open='gnome-open'
