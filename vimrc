@@ -10,19 +10,19 @@ Plugin 'gmarik/Vundle.vim'
 
 " Vundle Bundle/Plugin lines
 Plugin 'altercation/vim-colors-solarized' " http://ethanschoonover.com/solarized color scheme
-"Plugin 'scrooloose/nerdtree.git' " NERDTree filemanager
 Plugin 'jeetsukumaran/vim-buffergator' 
-"Plugin 'nicoraffo/conque' " Shell terminal
+Plugin 'tpope/vim-vinegar' " file explorer built on netrw
+Plugin 'nacitar/a.vim'
 
-Plugin 'wesQ3/vim-windowswap'
 Plugin 'xolox/vim-session'
 Plugin 'xolox/vim-misc'
-
-Plugin 'nacitar/a.vim'
 
 Plugin 'vim-scripts/ccase.vim' " ClearCase helper
 
 "---- retired ----
+"Plugin 'wesQ3/vim-windowswap'
+"Plugin 'nicoraffo/conque' " Shell terminal
+"Plugin 'scrooloose/nerdtree.git' " NERDTree filemanager
 "Plugin 'fholgado/minibufexpl.vim'
 "Plugin 'jlanzarotta/bufexplorer'
 "Plugin 'jistr/vim-nerdtree-tabs' " tabs for NERDTree
@@ -39,18 +39,13 @@ syntax enable
 set background=dark
 colorscheme solarized
 
-" map nerdtree
-"map <C-n> :NERDTreeToggle<CR>
+" key mappings
+map <leader>f :E<cr> " load vim's builtin file explorer
+map <leader>n :bnext<cr> " switch to next buffer
+map <leader>p :bprevious<cr> " switch to previous buffer
+map <leader>g :e#<cr> " switch to last used buffer
 
-" buffer switching
-" Mappings to access buffers (don't use "\p" because a
-" delay before pressing "p" would accidentally paste).
-" \l       : list buffers
-" \b \f \g : go back/forward/last-used
-"nnoremap <Leader>l :ls<CR>
-"nnoremap <Leader>b :bp<CR>
-"nnoremap <Leader>f :bn<CR>
-"nnoremap <Leader>g :e#<CR>
+" buffer config
 " It's useful to show the buffer number in the status line.
 set laststatus=2 statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
@@ -62,5 +57,6 @@ set number
 
 " filetype indents
 autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4
+autocmd FileType c setlocal expandtab tabstop=3 shiftwidth=3
 autocmd FileType cpp setlocal expandtab tabstop=3 shiftwidth=3
 autocmd FileType sh setlocal autoindent tabstop=2 shiftwidth=2 expandtab softtabstop=2
