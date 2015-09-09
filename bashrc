@@ -21,6 +21,11 @@ alias open='gnome-open'
 alias rehash='. ~/.bashrc'
 alias editrc='vim -p ~/.bashrc'
 
+#screen aliases
+alias attach='$HOME/opt/bin/grabssh ; screen -d -R'
+alias fixssh='source $HOME/opt/bin/fixssh'
+alias ssh='fixssh; ssh'
+
 #history hacks
 function history {
   if [ $# -eq 0 ]; then builtin history
