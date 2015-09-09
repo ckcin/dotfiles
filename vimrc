@@ -9,7 +9,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Vundle Bundle/Plugin lines
-Plugin 'altercation/vim-colors-solarized' " http://ethanschoonover.com/solarized color scheme
+"Plugin 'altercation/vim-colors-solarized' " http://ethanschoonover.com/solarized color scheme
 Plugin 'jeetsukumaran/vim-buffergator' 
 Plugin 'tpope/vim-vinegar' " file explorer built on netrw
 Plugin 'nacitar/a.vim'
@@ -37,7 +37,7 @@ filetype plugin indent on    " required
 " enable solarized settings
 syntax enable
 set background=dark
-colorscheme solarized
+"colorscheme solarized
 
 " key mappings
 map <leader>f :E<cr> " load vim's builtin file explorer

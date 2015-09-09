@@ -22,7 +22,9 @@ alias rehash='. ~/.bashrc'
 alias editrc='vim -p ~/.bashrc'
 
 #history hacks
-function history { builtin history -c; builtin history -r; builtin history "$@"; }
-PROMPT_COMMAND="builtin history -a; $PROMPT_COMMAND"
-alias hist="history | grep "
+function history {
+  if [ $# -eq 0 ]; then builtin history
+  else builtin history | grep $@
+  fi
+}
 
