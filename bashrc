@@ -21,8 +21,18 @@ alias open='gnome-open'
 alias rehash='. ~/.bashrc'
 alias editrc='vim -p ~/.bashrc'
 
-#screen aliases
-alias attach='$HOME/opt/bin/grabssh ; screen -d -R'
+#screen helpers and aliases
+function grabssh()
+{
+  SSHV="SSH_CLIENT SSH_TTY SSH_AUTH_SOCK SSH_CONNECTION DISPLAY"
+
+  for x in ${SSHV} ; do
+    (eval echo $x=\$$x) | sed  's/=/="/
+                                s/$/"/
+                                s/^/export /'
+  done 1>$HOME/opt/bin/fixssh
+}
+alias attach='grabssh ; screen -d -R'
 alias fixssh='source $HOME/opt/bin/fixssh'
 alias ssh='fixssh; ssh'
 
