@@ -4,6 +4,13 @@
 
 export PS1='[\u@\h \W]\A\$ '
 
+# source local specifics
+if [ -d ${HOME}/.bashrc.d ]; then
+  for file in ${HOME}/.bashrc.d/*.sh; do
+    source $file
+  done
+fi
+
 # local apps and libraries (~/opt)
 export PATH=${HOME}/opt/bin:$PATH
 export MANPATH=${HOME}/opt/share/man:$MANPATH
@@ -43,3 +50,5 @@ function history {
   fi
 }
 
+alias pgrep="ps aux | grep "
+alias less="less -R"
