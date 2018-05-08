@@ -14,7 +14,7 @@ fi
 # local apps and libraries (~/opt)
 export PATH=${HOME}/opt/bin:$PATH
 export MANPATH=${HOME}/opt/share/man:$MANPATH
-export PYTHONPATH=${HOME}/opt/lib/python2.6/site-packages/:$PYTHONPATH
+export PYTHONPATH=${HOME}/opt/lib64/python2.6/site-packages/:$PYTHONPATH
 export LANG=en_US
 export SVN_EDITOR=vim
 unset SSH_ASKPASS
@@ -24,7 +24,7 @@ alias vim_reset='rm -rf ~/.vim; git clone https://github.com/gmarik/Vundle.vim.g
 alias vim_update='vim +PluginUpdate +qall'
 
 #system aliases
-alias open='gnome-open'
+alias open='xdg-open'
 alias rehash='. ~/.bashrc'
 alias editrc='vim -p ~/.bashrc'
 
@@ -49,6 +49,24 @@ function history {
   else builtin history | grep $@
   fi
 }
-
 alias pgrep="ps aux | grep "
 alias less="less -R"
+
+#dev utils
+function build {
+  date=`date +%Y%m%d%H%M%S`
+  logfile=make_$1_${date}.log
+  shift
+  if [ $# -ne 0 ]; then 
+    reset; (echo "make " $@; make $@ )|& tee $logfile
+    echo "========================================="
+    echo " errors:"
+    grep ^#error $logfile
+    echo "========================================="
+    echo " failures:"
+    grep ^#fail $logfile
+
+    echo "log written to: "${logfile}
+  fi
+}
+
