@@ -14,10 +14,8 @@ Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'tpope/vim-vinegar' " file explorer built on netrw
 Plugin 'nacitar/a.vim'
 
-Plugin 'xolox/vim-session'
 Plugin 'xolox/vim-misc'
 
-Plugin 'vim-scripts/ccase.vim' " ClearCase helper
 
 "---- retired ----
 "Plugin 'wesQ3/vim-windowswap'
@@ -28,6 +26,8 @@ Plugin 'vim-scripts/ccase.vim' " ClearCase helper
 "Plugin 'jistr/vim-nerdtree-tabs' " tabs for NERDTree
 "Plugin 'vim-scripts/TabBar'
 "Plugin 'bling/vim-bufferline'
+"Plugin 'xolox/vim-session'
+"Plugin 'vim-scripts/ccase.vim' " ClearCase helper
 "---- retired ----
 
 " All of your Plugins must be added before the following line
