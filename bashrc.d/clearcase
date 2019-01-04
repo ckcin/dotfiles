@@ -1,11 +1,12 @@
-# current config spec
+# view utilities
 function ct_catcs() { cleartool catcs | egrep -B1 ^elem; }
+alias ct_lsco='cleartool lsco -me -cview -short -r'
+alias rm_ccjunk='find . -name "*.keep*" -o -name "*.contrib*" -o -name "*.unloaded*" -exec rm -f {} \;'
 
 # branch/label/view changes
 function ct_br_changelist() { cleartool find ${2:-"."} -nxname -branch "brtype($1)" -print ; }
 function ct_br_details() { cleartool find ${2:-"."} -version "brtype($1) && version(.../$1/LATEST)" -print ; }
 function ct_lb_details() { cleartool find ${2:-"."} -version "lbtype($1)" -print ; }
-alias ct_lsco='cleartool lsco -me -cview -short -r'
 
 # diff utilities
 function ct_diff() { cleartool diff -col `tput cols` ${2:-"-pre"} $1 $2 ; }
@@ -14,4 +15,4 @@ function ct_udiff() { cleartool find . -type f -branch "brtype($1)" -exec "clear
 
 # merge utilities
 function ct_br_merge() { tag=$1; shift; cleartool findmerge ${@:-.} -nc -fver .../$tag/LATEST -merge -abort -log $tag.log; }
-function ct_lb_merge() { tag=$1; shift; cleartool findmerge ${@:-.} -nc -fver $tag -merge -abort -log $tag.log; }
+function ct_lb_merge() { tag=$1; shift; cleartool findmerge ${@:-.} -nc -fver $tag -merge -abort -log $tag.log; } 
